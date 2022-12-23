@@ -28,6 +28,7 @@ Cnpj.init({
   sequelize: db,
   modelName: 'cnpj',
   timestamps: true,
+  initialAutoIncrement: '437',
 });
 
 export default Cnpj;

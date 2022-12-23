@@ -17,7 +17,6 @@ module.exports = {
       companyType: {
         type: Sequelize.STRING(255),
         allowNull: false,
-        defaultValue: Sequelize.fn('now'),
       },
       createdAt: {
         type: Sequelize.DATE,
@@ -29,6 +28,8 @@ module.exports = {
         allowNull: false,
         defaultValue: Sequelize.fn('now'),
       }
+    }, {
+      initialAutoIncrement: 437,
     });
   },
 
