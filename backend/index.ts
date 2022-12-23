@@ -1,12 +1,9 @@
-import express from 'express';
-import cors from 'cors';
-import helmet from 'helmet';
 
-const app = express();
+import app from './src/app';
 
-app.use(cors);
-app.use(helmet());
+const port = 3001;
 
-app.listen(3001, () => {
-    console.log('Server online');
+
+app.listen(port, () => {
+  console.log('Server online on port', port);
 });
