@@ -49,7 +49,7 @@ module.exports = {
         allowNull: false,
         defaultValue: Sequelize.fn('now'),
       },
-      cashForceAdm: {
+      cashforceAdm: {
         type: Sequelize.BOOLEAN,
         defaultValue: false,
       }
