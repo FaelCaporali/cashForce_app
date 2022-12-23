@@ -1,32 +1,9 @@
--- phpMyAdmin SQL Dump
--- version 5.0.2
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Tempo de geração: 15-Dez-2020 às 12:55
--- Versão do servidor: 10.4.13-MariaDB
--- versão do PHP: 7.4.8
+-- Active: 1671805850552@@127.0.0.1@3002
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
+DROP DATABASE IF EXISTS `cashForce-mirror`;
+CREATE DATABASE `cashForce-mirror`;
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Banco de dados: `cashforce_v3`
---
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `buyers`
---
-
+USE `cashForce-mirror`;
 CREATE TABLE `buyers` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -434,8 +411,3 @@ ALTER TABLE `providers`
 --
 ALTER TABLE `sponsors`
   ADD CONSTRAINT `sponsors_ibfk_1` FOREIGN KEY (`cnpjId`) REFERENCES `cnpjs` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
