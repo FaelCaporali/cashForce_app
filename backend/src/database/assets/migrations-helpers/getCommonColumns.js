@@ -102,4 +102,4 @@ module.exports = function getCommonColumns(sql) {
       defaultValue: null,
     },
   };
-}
+};
