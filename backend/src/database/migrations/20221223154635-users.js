@@ -18,6 +18,9 @@ module.exports = {
         type: Sequelize.STRING(255),
         allowNull: false,
         unique: true,
+        validate: {
+          isEmail: true,
+        },
       },
       phoneNumber: {
         type: Sequelize.STRING(255),
@@ -55,6 +58,9 @@ module.exports = {
       }
     }, {
       initialAutoIncrement: 122,
+      engine: 'InnoDB',
+      charset: 'latin1',
+      collate: 'latin1_swedish_ci',
     });
   },
 

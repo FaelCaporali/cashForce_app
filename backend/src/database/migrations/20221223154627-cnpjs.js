@@ -30,6 +30,9 @@ module.exports = {
       }
     }, {
       initialAutoIncrement: 437,
+      engine: 'InnoDB',
+      charset: 'latin1',
+      collate: 'latin1_swedish_ci',
     });
   },
 

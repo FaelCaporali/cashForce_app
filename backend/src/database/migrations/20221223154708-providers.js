@@ -26,6 +26,9 @@ module.exports = {
       },      
     }, {
       initialAutoIncrement: 235,
+      engine: 'InnoDB',
+      charset: 'latin1',
+      collate: 'latin1_swedish_ci',
     });
   },
 
