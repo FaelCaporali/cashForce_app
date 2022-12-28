@@ -1,6 +1,7 @@
 import { Model, INTEGER, STRING, BOOLEAN } from 'sequelize';
 import { UserAtt, UserCreationAtt } from './types/User';
 import db from '.';
+import TablesOptions from '../assets/models-helpers/TablesOpt';
 
 class User extends Model<UserAtt, UserCreationAtt> {
   declare readonly id?: number;
@@ -54,10 +55,8 @@ User.init({
     defaultValue: false,
   }
 }, {
-  underscored: false,
-  sequelize: db,
+  ...TablesOptions,
   modelName: 'user',
-  timestamps: true,
   initialAutoIncrement: '122',
 });
 

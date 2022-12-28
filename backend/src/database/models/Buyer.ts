@@ -1,7 +1,8 @@
 import { BOOLEAN } from 'sequelize';
 
 import CNPJOwner from '../assets/models-helpers/CNPJOwnerClass';
-import { CNPJOwnersColumns, CNPJOwnersOptions } from '../assets/models-helpers/CNPJOwnersConfig';
+import { CNPJOwnersColumns } from '../assets/models-helpers/CNPJOwnersColumns';
+import TablesOptions from '../assets/models-helpers/TablesOpt';
 
 import { BuyerAtt, BuyerCreationAtt } from './types/Buyer';
 
@@ -18,7 +19,7 @@ Buyer.init({
     defaultValue: true,
   },
 }, {
-  ...CNPJOwnersOptions,
+  ...TablesOptions,
   modelName: 'buyers',
   initialAutoIncrement: '152',
 });

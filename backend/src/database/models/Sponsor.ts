@@ -1,7 +1,8 @@
 import { STRING } from 'sequelize';
 
 import CNPJOwner from '../assets/models-helpers/CNPJOwnerClass';
-import { CNPJOwnersColumns, CNPJOwnersOptions } from '../assets/models-helpers/CNPJOwnersConfig';
+import { CNPJOwnersColumns } from '../assets/models-helpers/CNPJOwnersColumns';
+import TablesOptions from '../assets/models-helpers/TablesOpt';
 
 import { SponsorAtt, SponsorCreationAtt } from './types/Sponsor';
 
@@ -32,7 +33,7 @@ class Sponsor<Att, CreationAtt> extends CNPJOwner<SponsorAtt & Att, SponsorCreat
 Sponsor.init(
   SponsorsColumns,
   {
-    ...CNPJOwnersOptions,
+    ...TablesOptions,
     modelName: 'sponsors',
     initialAutoIncrement: '17',
   }

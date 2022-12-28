@@ -3,7 +3,7 @@ import { STRING } from 'sequelize';
 import Sponsor, { SponsorsColumns } from './Sponsor';
 import { ProviderAtt, ProviderCreationAtt } from './types/Provider';
 
-import { CNPJOwnersOptions } from '../assets/models-helpers/CNPJOwnersConfig';
+import TablesOptions from '../assets/models-helpers/TablesOpt';
 
 import Cnpj from './Cnpj';
 
@@ -18,7 +18,7 @@ Provider.init({
     defaultValue: null,
   },
 }, {
-  ...CNPJOwnersOptions,
+  ...TablesOptions,
   modelName: 'providers',
   initialAutoIncrement: '235',
 });

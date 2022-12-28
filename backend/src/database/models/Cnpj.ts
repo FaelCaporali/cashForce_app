@@ -1,6 +1,6 @@
 import { Model, INTEGER, STRING } from 'sequelize';
 import { CnpjAtt, CnpjCreationAtt } from './types/Cnpj';
-import db from '.';
+import TablesOptions from '../assets/models-helpers/TablesOpt';
 
 class Cnpj extends Model<CnpjAtt, CnpjCreationAtt> {
   declare readonly id?: number;
@@ -24,10 +24,8 @@ Cnpj.init({
     allowNull: false,
   },
 }, {
-  underscored: false,
-  sequelize: db,
+  ...TablesOptions,
   modelName: 'cnpj',
-  timestamps: true,
   initialAutoIncrement: '437',
 });
 

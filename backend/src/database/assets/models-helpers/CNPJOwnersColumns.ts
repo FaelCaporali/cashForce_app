@@ -1,6 +1,5 @@
 
 import { INTEGER, STRING } from 'sequelize';
-import db from '../models';
 
 export const CNPJOwnersColumns = {
   id: {
@@ -95,10 +94,4 @@ export const CNPJOwnersColumns = {
     type: STRING,
     defaultValue: null,
   },
-};
-
-export const CNPJOwnersOptions = {
-  underscored: false,
-  sequelize: db,
-  timestamps: true,
 };
