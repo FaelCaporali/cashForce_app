@@ -112,8 +112,10 @@ module.exports = {
       cnpjId: {
         type: Sequelize.INTEGER,
         defaultValue: null,
-        references: { model: 'cnpj', key: 'cnpj' },
+        references: { model: 'cnpjs', key: 'id' },
         key: true,
+        onDelete: 'SET NULL',
+        onUpdate: 'CASCADE',
       },
       email: {
         type: Sequelize.STRING,
