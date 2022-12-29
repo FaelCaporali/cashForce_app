@@ -1,16 +1,15 @@
 version: '3.9'
 
 services:
-  front:
+  frontend:
     container_name: cash_front
     build: ./frontend
     ports:
       - 3000:3000
     platform: linux/x86_64
-    working_dir: /cash-front
     depends_on:
       backend:
-        condition: service_healthy
+        condition: service_completed_successfully
     healthcheck:
       test: ["CMD", "lsof", "-t", "-i:3000"]
       timeout: 10s
@@ -18,11 +17,11 @@ services:
       start_period: 30s
   backend:
     container_name: cash_back
+    restart: always
     build: ./backend
     ports:
       - 3001:3001
     platform: linux/x86_64
-    working_dir: /cash-back
     depends_on:
       db:
         condition: service_healthy
@@ -30,8 +29,9 @@ services:
       - APP_PORT=3001
       - DB_USER=root
       - DB_PASS=123456
-      - DB_HOST=db
+      - HOST=db
       - DB_PORT=3306
+      - DB_NAME=cashforce_v4
     healthcheck:
       test: ["CMD", "lsof", "-t", "-i:3001"]
       timeout: 10s
@@ -47,7 +47,7 @@ services:
       - MYSQL_ROOT_PASSWORD=123456
     restart: 'always'
     healthcheck:
-      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost", "-u", "root", "--password=123456"] # Deve aguardar o banco ficar operacional
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost", "-u", "root", "--password=123456"]
       timeout: 10s
       retries: 5
     cap_add:
