@@ -1,9 +1,10 @@
+import App from './src/app';
+import * as dotenv from 'dotenv';
 
-import app from './src/app';
+dotenv.config();
 
-const port = 3001;
+const server = new App();
 
+server.listen(Number(process.env.API_PORT) || 8001);
 
-app.listen(port, () => {
-  console.log('Server online on port', port);
-});
+export default server;

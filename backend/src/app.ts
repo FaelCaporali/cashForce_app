@@ -1,12 +1,39 @@
-import express from 'express';
+import express, { Express, Router } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 
-const app = express();
+import OrderRouter from './routes/Orders.routes';
 
-app.use(helmet());
-app.use(cors());
-app.use(express.json());
+export default class App {
+  private readonly app: Express;
+  private readonly orders: Router;
+  //   private errorMiddleware: typeof errorMiddleware;
 
+  constructor() {
+    this.app = express();
+    this.orders = new OrderRouter().router;
+    //   this.errorMiddleware = errorMiddleware;
+    
+    this.config();
+    this.servePublicRoutes();
+    // this.handleError();
+  }
 
-export default app;
+  public listen(port: number) {
+    this.app.listen(port, () => console.log(`Data server running on port ${port}`));
+  }
+
+  private config() {
+    this.app.use(helmet());
+    this.app.use(cors());
+    this.app.use(express.json());
+  }
+
+  private servePublicRoutes() {
+    this.app.use('/orders', this.orders);
+  }
+
+//   private handleError() {
+//     this.app.use(this.errorMiddleware);
+//   }
+}
