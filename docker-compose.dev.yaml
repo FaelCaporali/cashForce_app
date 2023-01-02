@@ -2,13 +2,15 @@ version: '3.9'
 
 services:
   frontend:
-    platform: linux/x86_64
-    container_name: cash_front
-    build: ./frontend
+    container_name: cash_front-dev
+    build: 
+      context: ./frontend
+      dockerfile: dev.Dockerfile
     tty: true
-    restart: always
     ports:
-      - 80:8080
+      - 3000:8080
+    volumes:
+      - ./frontend/src:/src
     depends_on:
       backend:
         condition: service_healthy
@@ -18,13 +20,15 @@ services:
       retries: 5
       start_period: 30s
   backend:
-    platform: linux/x86_64
-    container_name: cash_back
+    container_name: cash_back-dev
     restart: always
     build: ./backend
     tty: true
+    command: npm run dev
     ports:
       - 3001:3001
+    volumes:
+      - ./backend/src:/src
     depends_on:
       db:
         condition: service_healthy
@@ -41,14 +45,15 @@ services:
       retries: 5
       start_period: 60s
   db:
-    platform: linux/x86_64
     image: mariadb:10-jammy
-    container_name: cash_db
+    container_name: cash_db-dev
+    ports:
+      - 3002:3306
     environment:
       - MYSQL_ROOT_PASSWORD=123456
     restart: 'always'
     healthcheck:
-      test: ["CMD", "mysql" ,"--user=root", "--password=123456", "-e", "SHOW DATABASES;"]
+      test: ["CMD", "mysql" ,"-u", "root", "--password=123456", "-w", "-V"]
       timeout: 10s
       retries: 5
       start_period: 60s
@@ -56,4 +61,4 @@ services:
       - SYS_NICE
 networks:
   default:
-    name: cashForce-net
+    name: cashForce-net-dev
