@@ -12,6 +12,6 @@ export default class OrderRouter {
   }
 
   private initiatePublicRoutes(): void {
-    this.router.get('/', async (req, res, next) => await new this.ctl(req, res, next).listAll());
+    this.router.get('/', async (req, res, next) => await new this.ctl(req, res, next).findBuyerOrders());
   }
 }
