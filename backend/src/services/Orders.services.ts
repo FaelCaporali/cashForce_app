@@ -1,5 +1,7 @@
 // import { Model } from 'sequelize';
+import Buyer from '../database/models/Buyer';
 import Order from '../database/models/Order';
+import Provider from '../database/models/Provider';
 // import { IOrder, IOrderCreationalAtt } from '../interfaces/IOrder';
 
 export default class OrderServices {
@@ -10,7 +12,11 @@ export default class OrderServices {
     this.model = Order;
   }
 
-  public async listAll() {
-    return await this.model.findAll({ include: { all: true } });
+  public async findBuyerOrders(id: number) {
+    return await this.model.findAll({
+      where: { buyerId: id },
+      attributes: ['id', 'nNf', 'emissionDate', 'value', 'orderStatusBuyer'],
+      include: [{ model: Buyer, attributes: ['id', 'name'] }, { model: Provider, attributes: ['id', 'name']}],
+    });
   }
 }
