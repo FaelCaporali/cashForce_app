@@ -33,6 +33,7 @@ export default class App {
   }
 
   private servePublicRoutes() {
+    this.app.get('/', (_req, res) => res.status(200).end());
     this.app.use('/', this.user);
     this.app.use('/orders', this.orders);
   }
