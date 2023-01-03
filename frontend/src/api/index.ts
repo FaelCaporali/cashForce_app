@@ -1,11 +1,10 @@
 import axios from "axios";
-import type { AxiosInstance } from 'axios';
-import type { IUser, IOrder } from '../interfaces';
-
+import type { AxiosInstance } from "axios";
+import type { IUser, IOrder } from "../interfaces";
 
 export class API {
-  declare readonly api: AxiosInstance;
-  declare token: string | undefined;
+  private api: AxiosInstance;
+  private token: string | undefined;
 
   constructor() {
     this.api = axios.create({
@@ -13,8 +12,8 @@ export class API {
     });
   }
 
-  async logBuyer(credentials: { name: string }): Promise<void> {
-    this.token = await this.api.post("/login", credentials);
+  async logBuyer(): Promise<void> {
+    this.token = "1";
     this.api.defaults.headers.common["Authorization"] = this.token;
   }
 
@@ -24,14 +23,12 @@ export class API {
   }
 
   async getMyOrders(): Promise<IOrder[]> {
-    return (await this.api.get("/orders")) as IOrder[];
+    const { data } = (await this.api.get("/orders"));
+    return data as IOrder[];
   }
 
   async getMe() {
-    return (await this.api.get("/me")) as IUser;
+    const { data } = (await this.api.get("/me"));
+    return data as IUser;
   }
 }
-
-const api = new API();
-
-export default api;

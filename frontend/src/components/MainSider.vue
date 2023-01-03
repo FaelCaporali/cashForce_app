@@ -12,10 +12,9 @@ import NavBar from "./SideBar/NavBar.vue";
 
 <style scoped>
 aside {
-  position: absolute;
-  width: 288px;
-  height: 900px;
-  left: 0px;
-  top: 0px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 </style>

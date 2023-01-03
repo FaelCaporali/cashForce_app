@@ -1,18 +1,16 @@
 <template>
   <header>
     <div>
-      <h1 class="some-title">Cash Force App</h1>
+      <h1 class="some-title"></h1>
     </div>
+    <hr />
   </header>
 </template>
 
 <style scoped>
 header {
-  position: absolute;
-  width: 1272px;
-  height: 64px;
-  left: 288px;
-  top: 0px;
+  width: 100%;
+  height: 5vh;
 }
 
 .some-title {
@@ -22,5 +20,9 @@ header {
   text-align: center;
 
   color: #00ad8c;
+}
+
+hr {
+  color: #e1e5ec;
 }
 </style>

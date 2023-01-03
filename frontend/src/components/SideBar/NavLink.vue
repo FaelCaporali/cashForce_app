@@ -17,15 +17,12 @@ const props = defineProps<{
 <style scoped>
 .menu-item {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-flow: row nowrap;
+  justify-content: center;
   align-items: center;
-  padding: 0px;
-
-  width: 288px;
-  height: 64px;
+  width: 100%;
+  padding: 1%;
 }
-
 .menu-item:hover {
   border-left: 4px #00ad8c solid;
 }
@@ -34,26 +31,18 @@ const props = defineProps<{
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 10px 0px;
-  gap: 10px;
-
-  width: 24px;
-  height: 44px;
+  padding: 5%;
 }
 
 .menu-text {
-  width: 85px;
-  height: 18px;
+  flex-grow: 1;
 
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 18px;
-  display: flex;
-  align-items: center;
-
+  text-align: start;
   color: #00ad8c;
+  width: 60%;
 }
 
 a {

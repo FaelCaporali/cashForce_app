@@ -13,35 +13,27 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
-
-  position: absolute;
-  width: 255px;
-  height: 53px;
-  left: 336px;
-  top: 104px;
+  width: 20%;
+  margin: 1% 2%;
 }
 
 .content-title {
   display: flex;
   flex-direction: row;
-  align-items: baseline;
+  align-items: center;
   justify-content: flex-start;
-  padding: 0px;
+  width: 100%;
+  margin: 0;
+}
 
-  width: 255px;
-  height: 53px;
+img {
+  margin-right: 3%;
 }
 
 h3 {
-  width: 149px;
-  height: 28px;
-
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 700;
-  font-size: 24px;
-  line-height: 28px;
 
   color: #021b51;
 }
@@ -50,8 +42,7 @@ p {
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
+  margin: 0;
 
   color: #727d94;
 }
