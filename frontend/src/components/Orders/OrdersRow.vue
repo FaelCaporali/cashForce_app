@@ -1,22 +1,7 @@
 <script setup lang="ts">
+import type { IOrder } from "../../interfaces";
 import ProviderLink from "../shared/ProviderLink.vue";
-const props = defineProps<{
-  order: {
-    id: number;
-    nNf: string;
-    emissionDate: Date;
-    value: number;
-    orderStatusBuyer: number;
-    buyer: {
-      id: number;
-      name: string;
-    };
-    provider: {
-      id: number;
-      name: string;
-    };
-  };
-}>();
+const props = defineProps<{ order: IOrder }>();
 
 const statusMapper = [
   "Pendente de confirmação",
