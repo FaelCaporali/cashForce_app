@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import OrderServices from '../services/Orders.services';
+import HttpException from '../shared/error/HttpException';
 
 export default class OrderController {
   private readonly services: typeof OrderServices;
@@ -11,9 +12,11 @@ export default class OrderController {
     this.services = OrderServices;
   }
   
-  async listAll(): Promise<Response | void> {
+  async findBuyerOrders(): Promise<Response | void> {
     try {
-      const orders = await new this.services().listAll();
+      const { authorization } = this.req.headers;
+      if (!authorization) this.next(new HttpException(400, 'Credentials must be provided'));
+      const orders = await new this.services().findBuyerOrders(Number(authorization));
       return this.res.status(200).json(orders);
     } catch (e) {
       this.next(e);
