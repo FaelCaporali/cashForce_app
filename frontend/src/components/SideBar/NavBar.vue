@@ -3,20 +3,19 @@ import NavLink from "./NavLink.vue";
 </script>
 
 <template>
-  <div class="sider-fornecedor">
+  <nav>
     <NavLink to="/orders" text="Notas Fiscais" />
-  </div>
+  </nav>
 </template>
 
 <style scoped>
-.sider-fornecedor {
+nav {
+  flex-grow: 1;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0px;
-  width: 288px;
-  height: 144px;
-  left: 0px;
-  top: 0px;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 1vh;
 }
 </style>

@@ -1,24 +1,20 @@
 <template>
   <div class="menu-hero">
-    <img src="../../assets/CashForceLogo.svg" id="sider-logo" />
+    <img src="../../assets/CashForceLogo.svg" />
   </div>
 </template>
 
 <style scoped>
-#sider-logo {
-  position: absolute;
-  width: 160px;
-  height: 30px;
-  left: 24px;
-  top: 25px;
-}
 .menu-hero {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 0px;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 10% 5%;
+}
 
-  width: 288px;
-  height: 80px;
+img {
+  width: 160px;
+  height: 30px;
 }
 </style>
