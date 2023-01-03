@@ -15,7 +15,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <table class="main-table">
+  <table>
     <thead>
       <tr>
         <th>NOTA FISCAL</th>
@@ -27,23 +27,48 @@ onMounted(() => {
         <th></th>
       </tr>
     </thead>
-    <tbody v-for="order in orders" v-bind:key="order.id">
-      <OrdersRow v-bind:order="(order as IOrder)" />
+    <tbody>
+      <OrdersRow
+        v-for="order in orders"
+        v-bind:key="order.id"
+        v-bind:order="(order as IOrder)"
+      />
     </tbody>
   </table>
 </template>
 
-<style scoped>
-.main-table {
+<style>
+table {
+  margin-top: 2%;
+  width: 100%;
+}
+tbody {
   display: flex;
-  flex-direction: column;
+  flex-flow: row wrap;
+}
+tr {
+  display: flex;
+  flex-flow: row nowrap;
   align-items: center;
-  padding: 0px;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 1%;
+}
 
-  position: absolute;
-  width: 1177px;
-  height: 214px;
-  left: 336px;
-  top: 240px;
+th {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 3%;
+
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: #a1a8b8;
 }
 </style>
