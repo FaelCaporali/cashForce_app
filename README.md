@@ -1,7 +1,7 @@
 # Boas vindas ao projeto Cash Force Challenge app
 
 ---
-:money_mouth_face: :money_with_wings: :money_with_wings: :money_with_wings: :money_mouth_face:
+--- :money_mouth_face: :money_with_wings: :money_with_wings: :money_with_wings: :money_mouth_face: ---
 
 Este repositório é um teste técnico sem fins comerciais e direitos reprodutivos
 
@@ -14,9 +14,9 @@ Este repositório é um teste técnico sem fins comerciais e direitos reprodutiv
 
 --- :money_mouth_face: :money_with_wings: :money_with_wings: :money_with_wings: :money_mouth_face: ---
 
-<details>
+<details open>
 
-<summary open>
+<summary>
 
 ## CashForce Challenge App
 
