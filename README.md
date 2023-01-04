@@ -42,14 +42,15 @@ Este repositório é um teste técnico sem fins comerciais e direitos reprodutiv
 > ```
 >
 > e ✨✨✨ pronto!
+>
 > ❗**OBSERVAÇÃO** A API estará disponível no endereço <http://localhost:3001>, e a interface do usuário no endereço <http://localhost:8080>
 
 2. Local:
 
-> Para rodar o projeto localmente assume que existe uam instância MySql ou MariaDB rodando localmente.
+> Para rodar o projeto localmente é necessário uma instância MySql ou MariaDB rodando localmente.
 >
 > 1. Clone o repositório.
-> 2. Entre na pasta `backend`, renomeie o arquivo `.env.exemple para .env e preencha as variáveis de ambiente do mesmo.
+> 2. Entre na pasta `backend`, renomeie o arquivo `.env.exemple` para `.env` e preencha as variáveis de ambiente do mesmo.
 > 3. Rode o comando na pasta `backend`:
 >
 > ```bash
