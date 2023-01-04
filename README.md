@@ -69,6 +69,8 @@ Este repositório é um teste técnico sem fins comerciais e direitos reprodutiv
 >
 > ```
 >
+>
+> ❗**OBSERVAÇÃO** A API estará disponível no endereço <http://localhost:3001>, e a interface do usuário no endereço <http://localhost:5173>
 </details>
 
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:rafelhon@gmail.com) &nbsp;
