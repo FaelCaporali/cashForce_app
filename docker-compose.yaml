@@ -12,11 +12,6 @@ services:
     depends_on:
       backend:
         condition: service_healthy
-    healthcheck:
-      test: ["CMD", "npm", "run", "healthcheck"]
-      timeout: 10s
-      retries: 5
-      start_period: 30s
   backend:
     platform: linux/x86_64
     container_name: cash_back
