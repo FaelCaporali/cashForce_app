@@ -4,21 +4,19 @@
 :money_mouth_face: :money_with_wings: :money_with_wings: :money_with_wings: :money_mouth_face:
 
 Este repositório é um teste técnico sem fins comerciais e direitos reprodutivos
-/*******************************************************
 
-* Copyright (C) 2009-2022 Fael Caporali rafaelhon@gmail.com
-*
-* This file is part of Cash-Force-Challenge-App.
-*
-* Cash Force Challenge App can not be copied and/or distributed without the express
-* permission of Rafael Honório Caporali de Freitas
- *******************************************************/
+> * Copyright (C) 2009-2022 Fael Caporali rafaelhon@gmail.com
+> *
+> * This file is part of Cash-Force-Challenge-App.
+> *
+> * Cash Force Challenge App can not be copied and/or distributed without the express
+> * permission of Rafael Honório Caporali de Freitas
 
 --- :money_mouth_face: :money_with_wings: :money_with_wings: :money_with_wings: :money_mouth_face: ---
 
 <details>
 
-<summary>
+<summary open>
 
 ## CashForce Challenge App
 
