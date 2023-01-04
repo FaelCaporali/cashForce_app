@@ -8,12 +8,12 @@ services:
     tty: true
     restart: always
     ports:
-      - 80:8080
+      - 8080:4173
     depends_on:
       backend:
         condition: service_healthy
     healthcheck:
-      test: ["CMD", "lsof", "-t", "-i:3000"]
+      test: ["CMD", "npm", "run", "healthcheck"]
       timeout: 10s
       retries: 5
       start_period: 30s
@@ -36,7 +36,7 @@ services:
       - DB_PORT=3306
       - DB_NAME=cashforce_v4
     healthcheck:
-      test: ["CMD", "lsof", "-t", "-i:3001"]
+      test: ["CMD", "npm", "run", "healthcheck"]
       timeout: 10s
       retries: 5
       start_period: 60s
